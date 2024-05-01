@@ -6,7 +6,29 @@ import ProductList from "./pages/ProductList.jsx"
 import Product from "./pages/Product.jsx"
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count,setCount] = useState(0);
+  const [redCount, setRedCount] = useState(0);
+  const [blueCount, setBlueCount] = useState(0);
+  const [greenCount, setGreenCount] = useState(0);
+  const redIncrement = () => {
+    setRedCount(redCount + 1)
+    setCount(count + 1)
+  }
+  const blueIncrement = () => {
+    setBlueCount(blueCount + 1)
+    setCount(count + 1)
+  }
+  const greenIncrement = () => {
+    setGreenCount(greenCount + 1)
+    setCount(count + 1)
+  }
+  const resetCounts = () => {
+    setCount(0)
+    setRedCount(0)
+    setBlueCount(0)
+    setGreenCount(0)
+  }
+  
   return (
     <>
     <nav>
@@ -19,8 +41,8 @@ const App = () => {
     </nav>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/cart" element={<Cart />}/>
-      <Route path="/products" element={<ProductList />}/>
+      <Route path="/cart" element={<Cart redCount={redCount} blueCount={blueCount} greenCount={greenCount} count={count} resetCounts={resetCounts}/>}/>
+      <Route path="/products" element={<ProductList onClickRed={redIncrement} onClickBlue={blueIncrement} onClickGreen={greenIncrement}/>}/>
       <Route path="/products/:id" element={<Product />}/>
     </Routes>
     </>
