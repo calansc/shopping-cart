@@ -5,3 +5,12 @@
   margin: 0px;
   padding: 0px;
 }
+.color-red {
+  filter: invert(9%) sepia(100%) saturate(7421%) hue-rotate(4deg) brightness(92%) contrast(110%);
+}
+.color-blue {
+  filter: invert(9%) sepia(100%) saturate(7383%) hue-rotate(247deg) brightness(81%) contrast(141%);
+}
+.color-green {
+  filter: invert(55%) sepia(61%) saturate(3048%) hue-rotate(83deg) brightness(109%) contrast(127%);
+}
