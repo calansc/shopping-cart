@@ -8,7 +8,7 @@ export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
             <ul>
                 <li>
                     <Link to="/products/red"> 
-                        <img className="color-red" src={cart} alt="Cart" height="50"/>
+                        <img className="red" src={cart} alt="Cart" height="50"/>
                         <br/>
                         Product Red
                     </Link>
@@ -20,7 +20,7 @@ export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
                 </li>
                 <li>
                     <Link to="/products/blue"> 
-                        <img className="color-blue" src={cart} alt="Cart" height="50"/>
+                        <img className="blue" src={cart} alt="Cart" height="50"/>
                         <br/>
                         Product Blue
                     </Link>
@@ -30,8 +30,8 @@ export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
                     </button>
                    
                 </li>                <li>
-                    <Link to="/products/gren"> 
-                        <img className="color-green" src={cart} alt="Cart" height="50"/>
+                    <Link to="/products/green"> 
+                        <img className="green" src={cart} alt="Cart" height="50"/>
                         <br/>
                         Product Green
                     </Link>
