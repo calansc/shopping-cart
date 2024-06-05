@@ -1,6 +1,12 @@
 :root {
-
+ --lightBlue:#8ecae6;
+ --blue:#219ebc;
+ --darkBlue:#023047;
+ --yellow:#ffb703;
+ --orange:#fb8500;
+ background-color: var(--lightBlue);
 }
+/* Color Palette https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500 */
 * {
   margin: 0px;
   padding: 0px;
@@ -13,4 +19,45 @@
 }
 .green {
   filter: invert(55%) sepia(61%) saturate(3048%) hue-rotate(83deg) brightness(109%) contrast(127%);
+}
+.navBar {
+  display:grid;
+  /* grid-auto-flow: column; */
+  /* justify-content:center; */
+  align-content: center;
+  height:5vh;
+  background-color:var(--yellow);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 1.5rem;
+  padding: 8px;
+
+}
+.navBarLinks {
+  display:grid;
+  align-items: center;
+  grid-auto-flow: column;
+  list-style-type: none;
+}
+.navBarLinks a {
+  text-decoration: none;
+  color:var(--darkBlue)
+}
+.navBarCart {
+  text-align: end;
+}
+.homeBody {
+  color:var(--darkBlue);
+  padding: 2rem 3rem 0 3rem;
+}
+.homeHeading {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.homeDescription {
+  padding-bottom: 1rem;
+}
+.homeList {
+  text-align: center;
+  padding-bottom: 1rem;
 }

@@ -31,22 +31,37 @@ const App = () => {
   }
   let {id} = useParams();
   const addToCartCounter = () => {
-    setAddCount(event.target.value)
-    console.log({id})
+    console.log(event.target.value);
+    setAddCount(parseInt(event.target.value))
+    console.log(window.location.pathname)
   }
   const addToCart = () => {
     setCount(count+addCount);
+    if (window.location.pathname === "/products/red") {
+      console.log('red')
+      setRedCount(redCount+addCount)
+      setAddCount(0);
+    } else if (window.location.pathname === "/products/blue") {
+      console.log('blue')
+      setBlueCount(blueCount+addCount)
+      setAddCount(0);
+    } else if (window.location.pathname === "/products/green") {
+      console.log('green')
+      setGreenCount(greenCount+addCount)
+      setAddCount(0);
+    } else { console.log('no color add?')}
+    
+    
   }
   
   return (
     <>
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        <li><Link to="/cart">Cart</Link></li>
+    <nav className="navBar">
+      <ul className="navBarLinks">
+        <li className="navBarHome"><Link to="/">Home</Link></li>
+        <li className="navBarProducts"><Link to="/products">Products</Link></li>
+        <li className="navBarCart"><Link to="/cart">Proceed to Checkout: {count}</Link></li>
       </ul>
-      <div>Shopping Cart Item Count: {count}</div>
     </nav>
     <Routes>
       <Route path="/" element={<Home />} />
