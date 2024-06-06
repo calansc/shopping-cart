@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom"
+
 const Home = () => {
     return (
         <div className="homeBody">
@@ -10,6 +12,9 @@ const Home = () => {
                 <li>Shopping Cart Parts!</li>
                 <li>Stickers of our shopping carts!</li>
             </ul>
+            <div className="homeProductLink">
+                <Link to="/products">Click to see our products!</Link>
+            </div>
         </div>
     )
 }
