@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
 import cart from "../assets/cart-outline.svg"
+import "./productList.css"
 
 export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
     return (
-        <>
-            <h1>Product List</h1>
-            <ul>
+        <div className="productPage">
+            <h1 className="productPageHeading">Product List</h1>
+            <ul className="productPageList">
                 <li>
                     <Link to="/products/red"> 
                         <img className="red" src={cart} alt="Cart" height="50"/>
@@ -44,6 +45,6 @@ export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
             </ul>
             
             
-        </>
+        </div>
     )
 }
