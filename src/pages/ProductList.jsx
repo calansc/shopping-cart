@@ -35,7 +35,7 @@ export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
                         Quick Add to Cart
                     </button>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/products/green"> 
                         <img className="green" src={cart} alt="Cart" height="50"/>
                         <p>Product 4</p>
@@ -61,7 +61,7 @@ export default function ProductList({ onClickRed, onClickBlue, onClickGreen }) {
                     <button onClick={onClickGreen}>
                         Quick Add to Cart
                     </button>
-                </li>
+                </li> */}
             </ul>
             
             
