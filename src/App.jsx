@@ -84,7 +84,7 @@ const App = () => {
       <ul className="navBarLinks">
         <li className="navBarHome"><Link to="/">Home</Link></li>
         <li className="navBarProducts"><Link to="/products">Products</Link></li>
-        <li className="navBarCart"><Link to="/cart">Proceed to Checkout: {count}</Link></li>
+        <li className="navBarCart"><Link to="/cart">Cart: {count}</Link></li>
       </ul>
     </nav>
     <Routes>
