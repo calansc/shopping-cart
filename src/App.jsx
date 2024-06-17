@@ -15,13 +15,25 @@ const App = () => {
     setRedCount(redCount + 1)
     setCount(count + 1)
   }
+  const redDecrement = () => {
+    setRedCount(redCount - 1)
+    setCount(count -1 )
+  }
   const blueIncrement = () => {
     setBlueCount(blueCount + 1)
     setCount(count + 1)
   }
+  const blueDecrement = () => {
+    setBlueCount(blueCount - 1)
+    setCount(count -1 )
+  }
   const greenIncrement = () => {
     setGreenCount(greenCount + 1)
     setCount(count + 1)
+  }
+  const greenDecrement = () => {
+    setgreenCount(greenCount - 1)
+    setCount(count -1 )
   }
   const resetCounts = () => {
     setCount(0)
@@ -31,28 +43,40 @@ const App = () => {
   }
   let {id} = useParams();
   const addToCartCounter = () => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setAddCount(parseInt(event.target.value))
-    console.log(window.location.pathname)
+    // console.log(window.location.pathname)
   }
+  const addCountIncrement = () => {
+    setAddCount(addCount +1);
+  }
+  const addCountDecrement = () => {
+    setAddCount(addCount -1);
+  }
+
   const addToCart = () => {
     setCount(count+addCount);
     if (window.location.pathname === "/products/red") {
-      console.log('red')
+      // console.log('red')
       setRedCount(redCount+addCount)
       setAddCount(0);
+      let input = document.getElementById("red");
+      input.value=0;
     } else if (window.location.pathname === "/products/blue") {
-      console.log('blue')
+      // console.log('blue')
       setBlueCount(blueCount+addCount)
       setAddCount(0);
+      let input = document.getElementById("blue");
+      input.value=0;
     } else if (window.location.pathname === "/products/green") {
-      console.log('green')
+      // console.log('green')
       setGreenCount(greenCount+addCount)
       setAddCount(0);
+      let input = document.getElementById("green");
+      input.value=0;
     } else { console.log('no color add?')}
-    
-    
   }
+
   
   return (
     <>
@@ -65,9 +89,34 @@ const App = () => {
     </nav>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/cart" element={<Cart redCount={redCount} blueCount={blueCount} greenCount={greenCount} count={count} resetCounts={resetCounts}/>}/>
-      <Route path="/products" element={<ProductList onClickRed={redIncrement} onClickBlue={blueIncrement} onClickGreen={greenIncrement}/>}/>
-      <Route path="/products/:id" element={<Product addToCartClick={addToCart} onChangeCount={addToCartCounter}/>}/>
+      <Route path="/cart" element={<Cart 
+          redCount={redCount} 
+          redIncrement={redIncrement} 
+          redDecrement={redDecrement}
+          blueCount={blueCount} 
+          blueDecrement={blueDecrement}
+          blueIncrement={blueIncrement}
+          greenCount={greenCount} 
+          greenIncrement={greenIncrement}
+          greenDecrement={greenDecrement}
+          count={count} 
+          resetCounts={resetCounts} 
+        />}
+      />
+      <Route path="/products" element={<ProductList 
+        onClickRed={redIncrement}
+        onClickBlue={blueIncrement} 
+        onClickGreen={greenIncrement}
+        />}
+      />
+      <Route path="/products/:id" element={<Product 
+        addToCartClick={addToCart} 
+        onChangeCount={addToCartCounter}
+        addCount={addCount}
+        addCountDecrement={addCountDecrement}
+        addCountIncrement={addCountIncrement}
+        />}
+      />
     </Routes>
     </>
   )

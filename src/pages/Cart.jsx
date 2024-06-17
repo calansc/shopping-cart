@@ -2,7 +2,10 @@ import "./cart.css"
 import { Link } from "react-router-dom"
 import cart from "../assets/cart-outline.svg"
 
-const Cart = ({ redCount, blueCount, greenCount, count, resetCounts}) => {
+const Cart = ({ redCount, redIncrement, redDecrement,
+    blueCount, blueIncrement, blueDecrement,
+    greenCount, greenIncrement, greenDecrement,
+    count, resetCounts}) => {
     const submitOrder = () => {
         if (count > 0) {
             alert("Submitted order of " + count + " items.")
@@ -24,8 +27,8 @@ const Cart = ({ redCount, blueCount, greenCount, count, resetCounts}) => {
                     </Link> 
                     <div className="cartCount">
                     <div>Red carts: {redCount}</div>  
-                    <button>Minus</button>
-                    <button>Plus</button>
+                    <button onClick={redDecrement}>Minus</button>
+                    <button onClick={redIncrement}>Plus</button>
                     </div>       
                 </li>
                 <li>
@@ -35,8 +38,8 @@ const Cart = ({ redCount, blueCount, greenCount, count, resetCounts}) => {
                     </Link>
                     <div className="cartCount">
                     <div>Blue carts: {blueCount}</div>
-                    <button>Minus</button>
-                    <button>Plus</button>
+                    <button onClick={blueDecrement}>Minus</button>
+                    <button onClick={blueIncrement}>Plus</button>
                     </div>   
                 </li>                
                 <li>
@@ -46,8 +49,8 @@ const Cart = ({ redCount, blueCount, greenCount, count, resetCounts}) => {
                     </Link>
                     <div className="cartCount">
                     <div>Green carts: {greenCount}</div>
-                    <button>Minus</button>
-                    <button>Plus</button>
+                    <button onClick={greenDecrement}>Minus</button>
+                    <button onClick={greenIncrement}>Plus</button>
                     </div>  
                     
                 </li>

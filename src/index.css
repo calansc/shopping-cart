@@ -50,6 +50,9 @@
   /* background-color: var(--lightBlue); */
   transform: scale(1.1);
 }
+.navBarHome, .navBarProducts, .navBarCart {
+  margin:8px;
+}
 .navBarCart {
   text-align: end;
 }
